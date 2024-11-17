@@ -4,8 +4,8 @@ const con = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: "",
-    database: "employeems",
-    port: 5713  // Specify the correct port
+    database: "employee_management_system",
+    port: 3307  // Specify the correct port
 });
 
 con.connect(function(err) {

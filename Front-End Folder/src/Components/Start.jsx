@@ -20,10 +20,10 @@ const Start = () => {
   }, [])
 
   return (
-    <div className="d-flex justify-content-center align-items-center vh-100 loginPage">
+    <div className="d-flex justify-content-center align-items-center vh-100 loginPage text-center">
       <div className="p-3 rounded w-25 border loginForm">
-        <h2 className="text-center">Login As</h2>
-        <div className="d-flex justify-content-between mt-5 mb-2">
+        <h2 className="text-center">Login As:</h2>
+        <div className="d-flex justify-content-between mt-5">
           <button type="button" className="btn btn-primary" onClick={() => {navigate('/employee_login')}}>
             Employee
           </button>
@@ -31,6 +31,12 @@ const Start = () => {
             Admin
           </button>
         </div>
+        <div className="mt-5 mb-2 text-center">
+          <h3>Not Registered?</h3>
+          <button type="button" className="btn btn-warning mt-4" onClick={() => { navigate('/register') }}>
+            Register
+          </button>
+          </div>
       </div>
     </div>
   );

@@ -15,6 +15,8 @@ import EmployeeLogin from './Components/EmployeeLogin'
 import EmployeeDetail from './Components/EmployeeDetail'
 import PrivateRoute from './Components/PrivateRoute'
 
+import Register from './Components/Register';
+
 import Projects from './Components/projects/project'  // Projects List
 import ProjectForm from './Components/projects/ProjectForm'  // Add Project Form
 import ProjectDetail from './Components/projects/ProjectDetail'  // Project Details Page
@@ -24,6 +26,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Start />}></Route>
+        <Route path="/register" element={<Register />} />
         <Route path="/adminlogin" element={<Login />}></Route>
         <Route path="/employee_login" element={<EmployeeLogin />}></Route>
         <Route path="/employee_detail/:id" element={<EmployeeDetail />}></Route>
