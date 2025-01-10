@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { toast } from 'react-hot-toast';
 
 function ProjectPhaseForm() {
   const [newPhase, setNewPhase] = useState({
@@ -60,7 +61,7 @@ function ProjectPhaseForm() {
 
     // Check if all fields are filled
     if (!newPhase.projectId || !newPhase.part || !newPhase.employee || !newPhase.startDate || !newPhase.endDate || !newPhase.status || !newPhase.contribution) {
-      alert('All fields are required');
+      toast.error('All fields are required');
       return;
     }
 
@@ -69,14 +70,14 @@ function ProjectPhaseForm() {
       const response = await axios.post(url, newPhase);
 
       console.log(response.data);
-      alert('Phase added successfully!');
+      toast.success('Phase added successfully!');
 
       // Close the modal after submission
       setShow(false);
       navigate('/dashboard');
     } catch (error) {
       console.error('Error adding phase:', error.response ? error.response.data : error.message);
-      alert('Failed to add phase. Please try again.');
+      toast.error('Failed to add phase. Please try again.');
     }
   };
 

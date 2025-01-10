@@ -78,7 +78,7 @@ function App() {
         </Routes>
         
       </BrowserRouter>
-      
+      <Toaster position="top-center" reverseOrder={false}/>
     </EmployeeProvider>
     
   );
